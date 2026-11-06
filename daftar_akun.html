@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <img src="" alt="logo Sakumu ">
+    <h2>Buat Akun Baru</h2>
+    <p>Mulai kelola keuanganmu dengan mudah</p>
+    <from action="Proses-daftar.php" method="post">
+        <div>
+            <label for="User">Id/Username</label><br>
+            <input type="text" id="user" placeholder="Id User" required minlength="4" maxlength="20"
+                pattern="[A-Za-z0-9_.]+" title="4-20 karakter: huruf,angka,titik,dan garis bawah"
+                autocomplete="username">
+        </div>
+        <label for="nama">Nama Lengkap</label><br>
+        <input type="text" id="nama" placeholder="Masukan nama " required maxlength="100" autocomplete="name">
+        </div>
+        <div>
+            <label for="Email">Email aktif</label><br>
+            <input type="email" id="email" name="email" placeholder="email aktif dan valid" required maxlength="100"
+                autocomplete="email">
+            <div>
+                <label for="password">Kata Sandi</label><br>
+
+                <input type="password" id="password" name="password" placeholder="Minimal 8 karakter"
+                    required minlength="8" maxlength="100" pattern="(?=.*[^A-Za-z0-9]).{8,}"
+                    title="Minimal 8 karakter dan mengandung minimal 1 simbol, contoh: ! @ # $"
+                    autocomplete="new-password">
+            </div>
+
+                <button type="submit">Daftar Sekarang</button>
+                </form>
+
+                <p>Sudah Punya Akun? <a href="login.html">Masuk</a></p>
+            </div>
+
+        </div>
+    </from>
+</body>
+
+</html>
