@@ -3,34 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Masuk - Sakumu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rell="stylesheet">
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <img src="" alt="logo Sakumu gold" />
-    <h2>Selamat Datang Kembali</h2>
-    <form action="proses_login.php" method="post">
-        <div>
-            <label for="Id/Username"></label>Id/Username</label><br>
-            <input id="Id/Username" type="text" placeholder=" Id user"
-            required maxlength="100" autocomplete="unsername">
-        </div>
-        <div>
-            <label for="Password"></label>Password</label><br>
-            <input id="Id/Username" type="Password" placeholder=" Kata sandi"
-            required maxlength="100" autocomplete="current-password">
+    <main class="auth">
+        <img class="logo" src="images/onboarding6.png" alt="Logo Sakumu">
+        <h1>Selamat Datang Kembali!</h1>
 
-            <p><A href=lupa_password.html> lupa_password</A></p>
-            <button type="submit">Masuk</button>
+        <form class="card" id="loginForm" method="post" action="#" novalidate>
+            <div class="field">
+                <label for="username">ID User / Username</label>
+                <div class="input-wrap">
+                    <span class="icon" aria-hidden="true">👤</span>
+                    <input type="text" id="username" name="username" placeholder="ID user atau email"
+                        autocomplete="username" maxlength="100" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <div class="input-wrap">
+                    <span class="icon" aria-hidden="true">🔒</span>
+                    <input type="password" id="password" name="password" placeholder="Kata Sandi"
+                        autocomplete="current-password" minlength="8" maxlength="64" required>
+                    <button type="button" class="toggle" data-target="password"
+                        aria-label="Tampilkan kata sandi">👁</button>
+                </div>
+            </div>
+
+            <a class="forgot" href="#">Lupa Password?</a>
+
+            <button type="submit" class="btn">Masuk</button>
+            <p class="error" id="error" role="alert"></p>
         </form>
-        <p>Belum punya Akun? <a href="daftar_akun.html">Register</a></p>
 
-        </div>
+        <p class="switch">Belum Punya Akun? <a href="daftar_akun.html">Register</a></p>
+    </main>
 
-    </form>
-
-
+    <script src="js/auth.js"></script>
 </body>
 
 </html>

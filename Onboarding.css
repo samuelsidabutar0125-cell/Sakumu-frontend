@@ -1,0 +1,202 @@
+:root {
+    --teal-1: #b9e6e8;
+    --teal-2: #e4f6f6;
+    --navy: #0b1220;
+    --ink: #10233a;
+    --card: #fbfaf0;
+    --accent: #1c8a9e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--ink);
+    background: linear-gradient(160deg, var(--teal-1), var(--teal-2) 70%);
+    padding: clamp(16px, 3vw, 40px);
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+/* tombol atas */
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: clamp(16px, 3vw, 32px)
+}
+
+.btn {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: .65em 1.5em;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    transition: transform .15s
+}
+
+.btn:hover {
+    transform: translateY(-2px)
+}
+
+.btn-light {
+    background: #fbfaf0;
+    color: var(--ink)
+}
+
+.btn-dark {
+    background: var(--navy);
+    color: #fff
+}
+
+.btn:focus-visible,
+.dot:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px
+}
+
+/* layout utama */
+.onboarding {
+    display: grid;
+    grid-template-columns: 1fr minmax(260px, 340px);
+    gap: clamp(24px, 5vw, 72px);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+    line-height: 1.25
+}
+
+.intro p {
+    margin-top: 1rem;
+    max-width: 52ch;
+    font-size: clamp(.95rem, 1.6vw, 1.1rem);
+    line-height: 1.6
+}
+
+.hero {
+    width: min(100%, 520px);
+    margin: clamp(16px, 3vw, 40px) auto 0
+}
+
+/* slider */
+.slider {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(16, 35, 58, .12);
+    padding: 20px 0 16px;
+    overflow: hidden
+}
+
+.viewport {
+    overflow: hidden;
+    touch-action: pan-y
+}
+
+.track {
+    display: flex;
+    transition: transform .5s ease
+}
+
+.slide {
+    flex: 0 0 100%;
+    padding: 0 24px;
+    text-align: left
+}
+
+.slide img {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    margin: 0 auto 16px;
+    mix-blend-mode: multiply
+}
+
+.slide h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    margin-bottom: .4rem
+}
+
+.slide p {
+    font-family: 'Lora', serif;
+    line-height: 1.65;
+    font-size: .98rem;
+    min-height: 6.6em
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 0;
+    background: #c3ccd4;
+    cursor: pointer;
+    transition: background .2s, transform .2s
+}
+
+.dot[aria-selected="true"] {
+    background: var(--navy);
+    transform: scale(1.25)
+}
+
+/* HP & tablet: tumpuk ke bawah */
+@media (max-width:860px) {
+    .onboarding {
+        grid-template-columns: 1fr
+    }
+
+    .intro {
+        text-align: center
+    }
+
+    .intro p {
+        margin-inline: auto
+    }
+
+    .slider {
+        max-width: 420px;
+        margin: 0 auto;
+        width: 100%
+    }
+
+    .topbar {
+        justify-content: center
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .track {
+        transition: none
+    }
+
+    .btn {
+        transition: none
+    }
+}

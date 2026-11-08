@@ -3,45 +3,67 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar - Sakumu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rell="stylesheet">
+    <link rel="stylesheet" href="daftar_akun.css">
 </head>
 
 <body>
-    <img src="" alt="logo Sakumu ">
-    <h2>Buat Akun Baru</h2>
-    <p>Mulai kelola keuanganmu dengan mudah</p>
-    <from action="Proses-daftar.php" method="post">
-        <div>
-            <label for="User">Id/Username</label><br>
-            <input type="text" id="user" placeholder="Id User" required minlength="4" maxlength="20"
-                pattern="[A-Za-z0-9_.]+" title="4-20 karakter: huruf,angka,titik,dan garis bawah"
-                autocomplete="username">
-        </div>
-        <label for="nama">Nama Lengkap</label><br>
-        <input type="text" id="nama" placeholder="Masukan nama " required maxlength="100" autocomplete="name">
-        </div>
-        <div>
-            <label for="Email">Email aktif</label><br>
-            <input type="email" id="email" name="email" placeholder="email aktif dan valid" required maxlength="100"
-                autocomplete="email">
-            <div>
-                <label for="password">Kata Sandi</label><br>
+    <main class="auth">
+        <img class="logo" src="images/onboarding5.png" alt="Logo Sakumu">
+        <h1>Buat Akun Baru</h1>
+        <p class="subtitle">Mulai Kelola Keuanganmu dengan mudah</p>
 
-                <input type="password" id="password" name="password" placeholder="Minimal 8 karakter"
-                    required minlength="8" maxlength="100" pattern="(?=.*[^A-Za-z0-9]).{8,}"
-                    title="Minimal 8 karakter dan mengandung minimal 1 simbol, contoh: ! @ # $"
-                    autocomplete="new-password">
+        <form class="card" id="registerForm" method="post" action="#" novalidate>
+            <div class="field">
+                <label for="username">ID User / Username</label>
+                <div class="input-wrap">
+                    <span class="icon" aria-hidden="true">👤</span>
+                    <input type="text" id="username" name="username" placeholder="ID User" autocomplete="username"
+                        minlength="4" maxlength="30" pattern="[A-Za-z0-9_.]+" required>
+                </div>
+                <p class="hint">Huruf, angka, titik, atau garis bawah.</p>
             </div>
 
-                <button type="submit">Daftar Sekarang</button>
-                </form>
-
-                <p>Sudah Punya Akun? <a href="login.html">Masuk</a></p>
+            <div class="field">
+                <label for="fullname">Nama Lengkap Pengguna</label>
+                <div class="input-wrap">
+                    <span class="icon" aria-hidden="true">➕</span>
+                    <input type="text" id="fullname" name="fullname" placeholder="Masukkan Nama Lengkap Anda"
+                        autocomplete="name" maxlength="100" required>
+                </div>
             </div>
 
-        </div>
-    </from>
+            <div class="field">
+                <label for="email">Email Aktif</label>
+                <div class="input-wrap">
+                    <span class="icon" aria-hidden="true">✉️</span>
+                    <input type="email" id="email" name="email" placeholder="Email Yang Aktif dan Valid"
+                        autocomplete="email" maxlength="100" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="password">Kata Sandi</label>
+                <div class="input-wrap">
+                    <span class="icon" aria-hidden="true">🔒</span>
+                    <input type="password" id="password" name="password" placeholder="Min.8 Karakter, gunakan simbol"
+                        autocomplete="new-password" minlength="8" maxlength="64" required>
+                    <button type="button" class="toggle" data-target="password"
+                        aria-label="Tampilkan kata sandi">👁</button>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Daftar Sekarang</button>
+            <p class="error" id="error" role="alert"></p>
+        </form>
+
+        <p class="switch">Sudah Punya Akun? <a href="login.html">Masuk</a></p>
+    </main>
+
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
